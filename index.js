@@ -52,18 +52,27 @@ function makePersonObject(id, name, email) {
  * ### Challenge `getName`
  * 
  * @instructions
- * This function takes as its only argument
+ * This function takes ???? as its only argument
+ *    add an argument to getName function, name works as thats what we are looking for
  * an object containing a `name` property,
+ *    create a object {} that has a name property name:
  * and return a string that reads `Hello, my name is {name}`,
+ *    return 'hello, my name is '
  * where `{name}` is the name stored in the object.
  * 
  * For example, if we invoke `getName`
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(id, name, email) {
   /* code here */
-}
+  const personName = {
+    id: id,
+    name: name,
+    email: email,
+  };
+  return 'Hello, my name is ' + personName.name;
+};
 
 /**
  * ### Challenge `makeSmartPerson`
