@@ -170,8 +170,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 
-// 
-//
+//  we have the two arguments inventory and index
+//  we need to get the car_make and car_model info from inventory
+//  creating a new variable with inventory[index] we can now use that to access .car_make and .car_model at any point ie the index
+// string `the car is a .car_make .car_model
+
 function getCarInfoByIndex(inventory, index) {
   /* code here */
   const anyCar = inventory[index];
@@ -190,6 +193,12 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
+
+// we have an inventory argument
+// .length-1 will get the last index item
+// creating a new variable with inventory[inventory.length-1] we can now use that to access .car_make and .car_model at the last point in the index
+// string `the car is a .car_make .car_model for the last car
+
 function getLastCarInfo(inventory) {
   /* code here */
   const lastCar = inventory[inventory.length-1];
