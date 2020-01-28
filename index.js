@@ -52,25 +52,15 @@ function makePersonObject(id, name, email) {
  * ### Challenge `getName`
  * 
  * @instructions
- * This function takes ???? as its only argument
- *    add an argument to getName function, name works as thats what we are looking for
- * an object containing a `name` property,
- *    create a object {} that has a name property name:
- * and return a string that reads `Hello, my name is {name}`,
- *    return 'hello, my name is '
- * where `{name}` is the name stored in the object.
- * 
+ * This function takes as its only argument an object containing a `name` property, and return a string that reads `Hello, my name is {name}`, where `{name}` is the name stored in the object.
+ *                    
  * For example, if we invoke `getName`
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(id, name, email) {
+
+function getName(personName) {
   /* code here */
-  const personName = {
-    id: id,
-    name: name,
-    email: email,
-  };
   return 'Hello, my name is ' + personName.name;
 };
 
@@ -87,10 +77,21 @@ function getName(id, name, email) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(name) {
   /* code here */
+  
 }
-
+// function makeSmartPerson(nameStr) {
+//   return {
+//     name: nameStr,
+//     sum: function(num1, num2){
+//       return num1 + num2;
+//     },
+//     speak: function(){
+//       return `Hello, my name is ${this.name}`
+//     }
+//   }
+// }
 
 
 
@@ -149,8 +150,21 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
+
+const arrayOfCars = [
+  {
+    car_make: 'Honda',
+    car_model: 'Accord'
+  },
+  {
+    car_make: 'Mazda',
+    car_model: 'CX5'
+  },
+]
+
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  return arrayOfCars[index].car_make
 }
 
 /**
