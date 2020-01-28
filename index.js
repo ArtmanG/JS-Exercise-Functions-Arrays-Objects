@@ -39,6 +39,13 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
+
+// we have the id, name, email arguments
+// the function is going to make a new person given the arguments
+// so we create an object of person {
+// within that we set up key:value pairs id, name, email, equal to the arguments so that they will change with whatever arguments are put in. }
+// with the object complete we return person
+
 function makePersonObject(id, name, email) {
   const person = {
     id: id,
@@ -52,12 +59,16 @@ function makePersonObject(id, name, email) {
  * ### Challenge `getName`
  * 
  * @instructions
- * This function takes as its only argument an object containing a `name` property, and return a string that reads `Hello, my name is {name}`, where `{name}` is the name stored in the object.
+ * This function takes as its only argument an object containing a `name` property, 
+ * and return a string that reads `Hello, my name is {name}`, where `{name}` is the name stored in the object.
  *                    
  * For example, if we invoke `getName`
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
+
+// we have an object outside this function that has a name property, that is going to be the argument
+// then we just need to return the name property using the argument.name with the string.
 
 function getName(personName) {
   /* code here */
@@ -77,6 +88,17 @@ function getName(personName) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
+ 
+// the argument here is a name, the name will be the value in a key:value pair
+// we are returning an object {
+// property name: with the argument from the function as the value
+// property sum:  so we need a function that adds 2 numbers together, those are the arguments.
+//                function (num1, num2) { return num1 + num2}
+// property speak: another function () <-- no arguments
+//                 returns a string and the smartPersonName
+//                 we need too pull the name out so it is not in the string and comes from the argument                    instead using ${} <-- what is that called
+// } object complete.
+''
 function makeSmartPerson(smartPersonName) {
   /* code here */
   return {
@@ -148,6 +170,8 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 
+// 
+//
 function getCarInfoByIndex(inventory, index) {
   /* code here */
   const anyCar = inventory[index];
@@ -186,8 +210,8 @@ function getLastCarInfo(inventory) {
 */
 function getCarInfoById(inventory, id) {
   /* code here */
-  const carById = inventory[id-1];
-  return `This is a ${carById.car_make} ${carById.car_model}`
+  id--;
+  return `This is a ${inventory[id].car_make} ${inventory[id].car_model}`
 }
 
 /**
@@ -198,10 +222,19 @@ function getCarInfoById(inventory, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
+
+//
 function sortCarInventory(inventory) {
   /* code here */
-  const sortCar = inventory.sort();
-  return inventory;
+  inventory.sort( a , b ); {
+    if (a.car_model > b.car_model) {
+      return 1;
+    }
+    if (a.car_model < b.car_model) {
+      return -1;
+    }
+  }
+  return 0;
 }
 
 /**
@@ -213,10 +246,13 @@ function sortCarInventory(inventory) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
+
+// we have the inventory of cars
+// go though each one and get what the car_year is: use a for loop
+// car_years [] array is what we need.
 function getModelYears(inventory) {
   /* code here */
-  const sortCarYear = inventory.sort();
-  return inventory;
+  // return inventory.car_year;
 }
 
 /**
@@ -231,8 +267,20 @@ function getModelYears(inventory) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
+
+// we have the inventory of cars and the max_year 
+// if the car is newer that max_year we don't want it, so make a new array for olderCar []
+// going through the inventory
+//
 function getOlderCars(inventory, max_year) {
   /* code here */
+  const olderCars = [];
+  for (let i = 0; i < inventory.length; i ++) {
+    if (inventory[i].car_year <= max_year) {
+      olderCars.push(inventory[i])
+    }
+  }
+  return olderCars;
 }
 
 /**
@@ -246,8 +294,17 @@ function getOlderCars(inventory, max_year) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
+
+// we have the inventory of cars 
+// inventory.car_make === Audi || Mercedes-Benz || Volkswagen || BMW
+// then put those into germanCar [] array
 function getGermanCars(inventory) {
   /* code here */
+  const germanCars = [];
+  if (inventory.car_make === "Audi" || "Mercedes-Benz" || "Volkswagen" || "BMW") {
+    germanCars.push(inventory.car_make);
+  }
+  return germanCars;
 }
 
 /**
